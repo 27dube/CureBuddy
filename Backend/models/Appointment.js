@@ -31,6 +31,10 @@ const appointmentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  reminderSent: {           // ✅ New field to avoid duplicate reminders
+    type: Boolean,
+    default: false,
+  },
   status: {
     type: String,
     enum: ["Scheduled", "Completed", "Cancelled"],
